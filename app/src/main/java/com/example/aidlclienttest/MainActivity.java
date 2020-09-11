@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.aidlservertest.Bean.PersonBean;
 import com.example.aidlservertest.Proxy.PersonManagerInterface;
 import com.example.aidlservertest.Proxy.PersonManagerProxy;
+import com.example.aidlservertest.Proxy.Stub;
 
 import java.util.List;
 
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             System.out.println("---客户端 建立服务链接; Thread: "+Thread.currentThread().getName());
             //初始化远程iBinder实例，将iBinder转成远程服务代理对象，也就是PersonManagerProxy类对象，并调用它的方法
-            personManagerInterface = PersonManagerProxy.Stub.asInterface(iBinder);
+            personManagerInterface = Stub.asInterface(iBinder);
         }
 
         @Override

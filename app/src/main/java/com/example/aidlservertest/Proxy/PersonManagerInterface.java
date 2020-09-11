@@ -19,5 +19,4 @@ public interface PersonManagerInterface extends IInterface {
 
     //获取人数
     List<PersonBean> getPerson() throws RemoteException;
-
 }
