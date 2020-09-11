@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 方法说明：通过绑定远程service，初始化远程iBinder实例
-     * 作者：heshuiguang
      * 日期：2020-09-09 17:14
      */
     private void prePareAidl() {
@@ -124,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 方法说明：创建ServiceConnection
-     * 作者：heshuiguang
      * 日期：2020-09-09 17:15
      */
     private ServiceConnection MyServerConnection = new ServiceConnection() {
