@@ -6,19 +6,15 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.aidlservertest.Bean.PersonBean;
 import com.example.aidlservertest.Proxy.PersonManagerInterface;
-import com.example.aidlservertest.Proxy.PersonManagerProxy;
 import com.example.aidlservertest.Proxy.Stub;
 
 import java.util.List;

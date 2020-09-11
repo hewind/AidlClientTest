@@ -8,16 +8,16 @@ import java.util.List;
 
 /**
  * 日期：2020-09-08 17:22
- * 类说明：PersonManagerProxy为发送数据，内部类Stub为接收数据
+ * 类说明：Proxy为发送数据，内部类Stub为接收数据
  */
-public class PersonManagerProxy implements PersonManagerInterface {
+public class Proxy implements PersonManagerInterface {
 
     //远程binder对象
     private IBinder iBinder;
     //Binder ID
     private static final String DESCRIPTOR = "com.example.aidlservertest.Proxy.PersonManagerInterface";
 
-    public PersonManagerProxy(IBinder iBinder) {
+    public Proxy(IBinder iBinder) {
         this.iBinder = iBinder;
     }
 

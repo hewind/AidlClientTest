@@ -5,16 +5,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.example.aidlservertest.Bean.PersonBean;
-
 import java.util.List;
 
 /**
- * 作者：heshuiguang
  * 日期：2020-09-11 14:36
  * 类说明：Sub类继承自binder实现了 PersonManagerService 接口方法，说明它可以跨进程传输，并可进行服务端相关的数据操作
  */
@@ -44,7 +40,7 @@ public abstract class Stub extends Binder implements PersonManagerInterface  {
             return (PersonManagerInterface)iin;
         }
         //返回服务端的Stub.proxy对象
-        return new PersonManagerProxy(iBinder);
+        return new Proxy(iBinder);
     }
 
     //这个方法运行在服务端中的Binder线程池当中，当客户端发起跨进程请求时，远程请求会通过系统底层封装后交由此方法处理。
