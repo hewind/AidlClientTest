@@ -74,30 +74,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        System.out.println("--- onRestart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        System.out.println("--- onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        System.out.println("--- onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("--- onStop");
-    }
-
+    /**
+     * 方法说明：获取Person人数
+     * 日期：2020-09-11 16:36
+     */
     private void getPerson() {
         try {
             List<PersonBean> list = personManagerInterface.getPerson();
@@ -138,5 +118,4 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("---客户端 断开服务链接; Thread: "+Thread.currentThread().getName());
         }
     };
-
 }
