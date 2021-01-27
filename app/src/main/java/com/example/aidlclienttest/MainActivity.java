@@ -1,12 +1,16 @@
 package com.example.aidlclienttest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.view.View;
@@ -19,7 +23,7 @@ import com.example.aidlservertest.Proxy.Stub;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Button button,button2,button3;
     private TextView textView;
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        System.out.println("--->A onCreate");
 
         prePareAidl();
 
@@ -72,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 getPerson();
             }
         });
+
+
     }
 
     /**
@@ -109,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             System.out.println("---客户端 建立服务链接; Thread: "+Thread.currentThread().getName());
-            //初始化远程iBinder实例，将iBinder转成远程服务代理对象，也就是PersonManagerProxy类对象，并调用它的方法
+            //初始化远程iBinder实例，将iBinder转成远程服务代理对象，也就是Proxy类对象，并调用它的方法
             personManagerInterface = Stub.asInterface(iBinder);
         }
 
@@ -118,4 +126,60 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("---客户端 断开服务链接; Thread: "+Thread.currentThread().getName());
         }
     };
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("--->A onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("--->A onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("--->A onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("--->A onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        System.out.println("--->A onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("--->A onDestroy");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        System.out.println("--->A onNewIntent");
+    }
+
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        System.out.println("--->A onConfigurationChanged");
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        System.out.println("--->A onConfigurationChanged(@NonNull Configuration newConfig)");
+    }
+
 }

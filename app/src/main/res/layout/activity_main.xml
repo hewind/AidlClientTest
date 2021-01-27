@@ -12,13 +12,14 @@
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="手写AIDL" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="添加人员" />
+        android:text="添加人员"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/button2"
